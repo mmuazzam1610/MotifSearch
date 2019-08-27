@@ -13,18 +13,18 @@ import java.util.ArrayList;
  */
 public class MotifSearch {
    static ArrayList<String> motifs;
-   static void printPermutation(String str, String stringToPrint){
+   static void generatePermutations(String str, String stringToPrint){
         if(stringToPrint.length()==str.length()){
             motifs.add(stringToPrint);
             return;
         }
         for (int i = 0; i < str.length(); i++) {
-            printPermutation(str, stringToPrint + str.charAt(i));
+            generatePermutations(str, stringToPrint + str.charAt(i));
         }
    }
     public static void main(String args[]){
         motifs = new ArrayList<>();
-        printPermutation("ACTG", "");
-        System.out.println(motifs.size());
+        generatePermutations("ACTG", "");
+        
     }
 }
